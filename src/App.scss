@@ -1,0 +1,17 @@
+@import "./scss/variables";
+
+.app {
+    min-height: 100vh;
+
+    & .jobs {
+        padding: 54px 22px;
+
+        & .job {
+            margin-bottom: 40px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
