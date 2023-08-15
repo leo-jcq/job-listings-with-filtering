@@ -1,0 +1,12 @@
+@import "../../scss/variables";
+
+.header {
+    aspect-ratio: 2.4/1;
+    width: 100%;
+
+    background-color: $desaturated-dark-cyan;
+    background-image: url("./bg-header-mobile.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
