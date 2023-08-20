@@ -33,5 +33,12 @@
         font-size: 1.1em;
         font-weight: 700;
         color: $dark-grayish-cyan;
+
+        transition: color 0.3s ease;
+
+        &:hover {
+            text-decoration: underline;
+            color: $desaturated-dark-cyan;
+        }
     }
 }

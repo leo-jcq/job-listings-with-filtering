@@ -8,25 +8,27 @@ interface JobProps {
 
 const Job: FC<JobProps> = ({ job, addFilter }) => {
     return (
-        <div className="job">
-            <div className="logo">
-                <img src={job.logo} alt="" className="image" />
-            </div>
-
-            <div className="infos">
-                <div className="info mainInfos">
-                    <span className="company">{job.company}</span>
-                    {job.new && <span className="new">New!</span>}
-                    {job.featured && <span className="featured">Featured</span>}
+        <div className={`job${job.featured ? ' featured' : ''}`}>
+            <div className="left">
+                <div className="logo">
+                    <img src={job.logo} alt="" className="image" />
                 </div>
 
-                <span className="info position">{job.position}</span>
+                <div className="infos">
+                    <div className="info mainInfos">
+                        <span className="company">{job.company}</span>
+                        {job.new && <span className="new">New!</span>}
+                        {job.featured && <span className="featured">Featured</span>}
+                    </div>
 
-                <div className="info smallInfos">
-                    <span className="postedAt">{job.postedAt} </span>
-                    {/* TEMP: replace with point */}-
-                    <span className="contract"> {job.contract} </span>-
-                    <span className="location"> {job.location}</span>
+                    <a href='#' className="info position">{job.position}</a>
+
+                    <div className="info smallInfos">
+                        <span className="postedAt">{job.postedAt} </span>
+                        {/* TEMP: replace with point */}-
+                        <span className="contract"> {job.contract} </span>-
+                        <span className="location"> {job.location}</span>
+                    </div>
                 </div>
             </div>
 

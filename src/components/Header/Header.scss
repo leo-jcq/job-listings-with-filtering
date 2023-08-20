@@ -9,4 +9,12 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+
+    @media screen and (min-width: $desktop-width) {
+        & {
+            aspect-ratio: 9.2/1;
+
+            background-image: url("../bg-header-desktop.svg");
+        }
+    }
 }
