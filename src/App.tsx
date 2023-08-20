@@ -5,11 +5,21 @@ import Filters from './components/Filters/Filters';
 import Header from './components/Header/Header';
 import Job from './components/Job/Job';
 
+/**
+ * The main app
+ *
+ * @return {JSX.Element}
+ */
 const App: FC = () => {
     const [filters, setFilters] = useState<Filter[]>([]);
 
     const hasFilters = useMemo(() => filters.length > 0, [filters]);
 
+    /**
+     * Add a filter to the filterList
+     *
+     * @param {Filter} filter the filter to add
+     */
     const addFilter = (filter: Filter) => {
         // if is not present
         if (!filters.includes(filter)) {
@@ -18,13 +28,27 @@ const App: FC = () => {
         }
     };
 
+    /**
+     * Remove a filter to the filterList
+     *
+     * @param {Filter} filter the filter to remove
+     */
     const removeFilter = (filter: Filter) =>
         setFilters((prevFilters) =>
             prevFilters.filter((prevFilter) => prevFilter.name !== filter.name)
         );
 
+    /**
+     * Reset the filter list
+     *
+     */
     const clearFilters = () => setFilters([]);
 
+    /**
+     * The jobs to display based on the filters
+     *
+     * @type {Job[]}
+     */
     const displayedJobs: Job[] = useMemo(() => {
         if (filters.length === 0) {
             return data;

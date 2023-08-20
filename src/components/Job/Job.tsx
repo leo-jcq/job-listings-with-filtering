@@ -6,7 +6,15 @@ interface JobProps {
     addFilter: (filter: Filter) => void;
 }
 
-const Job: FC<JobProps> = ({ job, addFilter }) => {
+/**
+ * A job
+ *
+ * @param {JobProps} props the props of the component
+ * @param {Job} props.job the job to display
+ * @param {(filter: Filter) => void} props.addFilter the function to add a filter
+ * @return {JSX.Element}
+ */
+const Job: FC<JobProps> = ({ job, addFilter }: JobProps): JSX.Element => {
     return (
         <div className={`job${job.featured ? ' featured' : ''}`}>
             <div className="left">
@@ -21,12 +29,13 @@ const Job: FC<JobProps> = ({ job, addFilter }) => {
                         {job.featured && <span className="featured">Featured</span>}
                     </div>
 
-                    <a href='#' className="info position">{job.position}</a>
+                    <a href="#" className="info position">
+                        {job.position}
+                    </a>
 
                     <div className="info smallInfos">
-                        <span className="postedAt">{job.postedAt} </span>
-                        {/* TEMP: replace with point */}-
-                        <span className="contract"> {job.contract} </span>-
+                        <span className="postedAt">{job.postedAt} </span>·
+                        <span className="contract"> {job.contract} </span>·
                         <span className="location"> {job.location}</span>
                     </div>
                 </div>

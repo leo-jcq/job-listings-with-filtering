@@ -8,7 +8,20 @@ interface FiltersProps {
     clearFilters: () => void;
 }
 
-const Filters: FC<FiltersProps> = ({ filters, removeFilter, clearFilters }) => {
+/**
+ * The filters list
+ *
+ * @param {FiltersProps} props the props of the component
+ * @param {Filter[]} props.filters the filters to display
+ * @param {(filter: Filter) => void} props.removeFilter the function to remove a filter
+ * @param {() => void} props.clearFilters the function to clear all the filters
+ * @return {JSX.Element}
+ */
+const Filters: FC<FiltersProps> = ({
+    filters,
+    removeFilter,
+    clearFilters
+}: FiltersProps): JSX.Element => {
     return (
         <div className="filters">
             <div className="list">
