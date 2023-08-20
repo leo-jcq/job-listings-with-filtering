@@ -3,6 +3,12 @@
 .app {
     min-height: 100vh;
 
+    background-color: $light-grayish-cyan-bg;
+
+    & .content {
+        padding: 0 10%;
+    }
+
     &.hasFilters .content {
         transform: translateY(-32px);
     }
