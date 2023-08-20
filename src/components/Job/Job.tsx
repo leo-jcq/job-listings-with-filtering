@@ -3,9 +3,10 @@ import './Job.scss';
 
 interface JobProps {
     job: Job;
+    addFilter: (filter: Filter) => void;
 }
 
-const Job: FC<JobProps> = ({ job }) => {
+const Job: FC<JobProps> = ({ job, addFilter }) => {
     return (
         <div className="job">
             <div className="logo">
@@ -23,10 +24,8 @@ const Job: FC<JobProps> = ({ job }) => {
 
                 <div className="info smallInfos">
                     <span className="postedAt">{job.postedAt} </span>
-                    {/* TEMP: replace with point */}
-                    -
-                    <span className="contract"> {job.contract} </span>
-                    -
+                    {/* TEMP: replace with point */}-
+                    <span className="contract"> {job.contract} </span>-
                     <span className="location"> {job.location}</span>
                 </div>
             </div>
@@ -34,15 +33,25 @@ const Job: FC<JobProps> = ({ job }) => {
             <hr className="separator" />
 
             <div className="tags">
-                <span className="tag">{job.role}</span>
-                <span className="tag">{job.level}</span>
+                <span className="tag" onClick={() => addFilter({ name: job.role, type: 'role' })}>
+                    {job.role}
+                </span>
+                <span className="tag" onClick={() => addFilter({ name: job.level, type: 'level' })}>
+                    {job.level}
+                </span>
                 {job.languages.map((language) => (
-                    <span key={language} className="tag">
+                    <span
+                        key={language}
+                        className="tag"
+                        onClick={() => addFilter({ name: language, type: 'language' })}>
                         {language}
                     </span>
                 ))}
                 {job.tools.map((tool) => (
-                    <span key={tool} className="tag">
+                    <span
+                        key={tool}
+                        className="tag"
+                        onClick={() => addFilter({ name: tool, type: 'tool' })}>
                         {tool}
                     </span>
                 ))}

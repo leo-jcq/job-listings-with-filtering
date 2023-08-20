@@ -3,6 +3,10 @@
 .app {
     min-height: 100vh;
 
+    &.hasFilters .content {
+        transform: translateY(-32px);
+    }
+
     & .jobs {
         padding: 54px 22px;
 

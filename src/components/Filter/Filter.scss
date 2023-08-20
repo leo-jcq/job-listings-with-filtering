@@ -1,0 +1,30 @@
+@import "../../scss/variables";
+
+.filter {
+    display: flex;
+    gap: 16px;
+    justify-content: space-between;
+    align-items: center;
+
+    & .text {
+        font-weight: 700;
+        color: $desaturated-dark-cyan;
+    }
+
+    & .remove {
+        width: 28px;
+        height: 28px;
+
+        border: none;
+        background-color: $desaturated-dark-cyan;
+
+        border-radius: 0 5px 5px 0;
+
+        cursor: pointer;
+
+        & .img {
+            width: 14px;
+            height: 14px;
+        }
+    }
+}
