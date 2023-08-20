@@ -1,6 +1,6 @@
 type FilterType = 'role' | 'level' | 'language' | 'tool';
 
 interface Filter {
-    name :string;
+    name: string;
     type: FilterType;
 }
